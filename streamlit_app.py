@@ -37,7 +37,7 @@ st.markdown(
 st.write("")
 st.write("")
 
-st.subheader("Select and Edit cells")
+st.subheader("① Select and Edit cells")
 
 st.checkbox(
     "Widen layout",
@@ -67,7 +67,9 @@ grid_table = AgGrid(
 
 sel_row = grid_table["selected_rows"]
 
-st.subheader("Check your selection")
+# st.write("---")
+
+st.subheader(" ② Check your selection")
 
 df_sel_row = pd.DataFrame(sel_row)
 
@@ -79,7 +81,7 @@ def convert_df(df):
 
 
 csv = convert_df(df_sel_row)  #
-
+st.write("")
 st.download_button(
     label="Download your selection to CSV",
     data=csv,
@@ -87,4 +89,5 @@ st.download_button(
     mime="text/csv",
 )
 
-st.write(sel_row)
+st.write("")
+st.write(df_sel_row)
