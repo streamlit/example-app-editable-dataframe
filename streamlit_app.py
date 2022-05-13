@@ -80,7 +80,7 @@ def convert_df(df):
     return df.to_csv().encode("utf-8")
 
 
-csv = convert_df(df_sel_row)  #
+csv = convert_df(df_sel_row)
 st.write("")
 st.download_button(
     label="Download your selection to CSV",
@@ -90,4 +90,4 @@ st.download_button(
 )
 
 st.write("")
-st.write(df_sel_row)
+st.write(sel_row)
