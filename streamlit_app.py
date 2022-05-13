@@ -81,10 +81,10 @@ def convert_df(df):
 csv = convert_df(df_sel_row)  #
 
 st.download_button(
-    label="Download to CSV",
+    label="Download your selection to CSV",
     data=csv,
     file_name="results.csv",
     mime="text/csv",
 )
 
-st.write(df_sel_row)
+st.write(sel_row)
