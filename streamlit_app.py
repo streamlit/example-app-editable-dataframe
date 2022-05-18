@@ -158,3 +158,6 @@ with col2:
             database="PETS",
             schema="PUBLIC",
         )
+
+        st.success("✅ Dataframe added to Db")
+
