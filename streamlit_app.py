@@ -26,33 +26,6 @@ st.image(
     width=100,
 )
 
-with st.expander("To-do"):
-
-    st.write(
-        """
-* Add red arrow
-* Add a text input to choose the table name
-    
-    """
-    )
-
-    st.write("")
-
-with st.expander("Done"):
-
-    st.write(
-        """
-
-* point 01
-
-    """
-    )
-    st.write("")
-
-
-st.markdown("")
-
-
 @st.cache
 def data_upload():
     df = pd.read_csv("CSV_samples/country-list.csv")
