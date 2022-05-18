@@ -38,7 +38,7 @@ df = data_upload()
 st.title("Dataframe with editable cells")
 st.write("")
 st.markdown(
-    "This is a demo of a dataframe with editable cells, powered by [streamlit-aggrid](https://pypi.org/project/streamlit-aggrid/). You can edit the cells by clicking on them and then export your selection to a `.csv` file or send it to your Snowflake Db"
+    "This is a demo of a dataframe with editable cells, powered by [streamlit-aggrid](https://pypi.org/project/streamlit-aggrid/). You can edit the cells by clicking on them, and then export your selection to a `.csv` file (or send it to your Snowflake Db!)"
 )
 st.write("")
 st.write("")
