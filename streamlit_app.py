@@ -22,18 +22,19 @@ def convert_df(df):
 
 
 def execute_query(conn, df_sel_row):
-    conn.cursor().execute(
-        "CREATE OR REPLACE TABLE "
-        "NEW_TABLE(COUNTRY string, CAPITAL string, TYPE string)"
-    )
+    if not df_sel_row.empty:
+        conn.cursor().execute(
+            "CREATE OR REPLACE TABLE "
+            "NEW_TABLE(COUNTRY string, CAPITAL string, TYPE string)"
+        )
 
-    write_pandas(
-        conn=conn,
-        df=df_sel_row,
-        table_name="NEW_TABLE",
-        database="PETS",
-        schema="PUBLIC",
-    )
+        write_pandas(
+            conn=conn,
+            df=df_sel_row,
+            table_name="NEW_TABLE",
+            database="PETS",
+            schema="PUBLIC",
+        )
 
 
 # Initialize connection.
@@ -114,6 +115,9 @@ st.write("")
 
 run_query = st.button("Add to DB", on_click=execute_query, args=(conn, df_sel_row))
 
-if run_query:
+if run_query and not df_sel_row.empty:
     st.success("✅ Dataframe added to DB")
     st.snow()
+
+if run_query and df_sel_row.empty:
+    st.info("Nothing to add to DB")
