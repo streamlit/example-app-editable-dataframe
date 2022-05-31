@@ -61,7 +61,7 @@ your selection to a `.csv` file (or send it to your Snowflake DB!)"""
 )
 st.write("")
 st.write("")
-st.subheader("① Select and edit cells")
+st.subheader("① Edit and select and cells")
 st.info("💡 Hold the `Shift` (⇧) key to select multiple rows at once.")
 st.caption("")
 gd = GridOptionsBuilder.from_dataframe(df)
