@@ -30,7 +30,7 @@ def execute_query(conn, df_sel_row, table_name):
             conn=conn,
             df=df_sel_row,
             table_name=table_name,
-            database="STREAMLIT_DB",
+            database="ONE",
             schema="PUBLIC",
             quote_identifiers=False,
         )
