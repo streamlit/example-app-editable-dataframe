@@ -30,7 +30,7 @@ def execute_query(conn, df_sel_row, table_name):
             conn=conn,
             df=df_sel_row,
             table_name=table_name,
-            database="ONE",
+            database="SNOWVATION",
             schema="PUBLIC",
             quote_identifiers=False,
         )
@@ -40,7 +40,7 @@ def execute_query(conn, df_sel_row, table_name):
 # Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
 def init_connection():
-    return snowflake.connector.connect(**st.secrets["snowflake"])
+    return connect(**st.secrets["snowflake"])
 
 
 # The code below is for the title and logo.
